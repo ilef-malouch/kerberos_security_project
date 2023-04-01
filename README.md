@@ -85,8 +85,6 @@ In order to proceed with the configurations we need to have a :
  |    :---:         |     :---:      |    :---:           |
  | KDC              | 192.168.56.102 | kdc.example.tn     |
  | server           | 192.168.56.101 | server.example.tn  |
- > machines IP's are just an example, use `hostname -I` to get each machine ip. <br>
- > All the configurations must be done in **root** mode, use `su -` to connect as root.
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -184,7 +182,10 @@ root/admin *                              # just uncomment the line
 systemctl restart krb5-admin-server
 systemctl status krb5-admin-server        # to check service status
 ```
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p> </p>
+<img src="/images/kdc/1.png">
+<img src="/images/kdc/2.png">
+
 
 #### 5. Configure Server
 5.1. We need to install **the packages** _krb5-user_, _libpam-krb5_ and _libpam-ccreds_ by running: 
@@ -215,7 +216,9 @@ kadmin
 addprinc testUser
 ```
 > type `q` to exit.
-
+<p> </p>
+<img src="/images/server/1.png">
+<img src="/images/server/2.png">
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Flask Configuration
@@ -319,7 +322,6 @@ su testUser                   # login as the test user (use another shell then t
 ```sh
 ./negotiate.py home           # return response content (list of files) and status code 200.
 ```
-> When we run `klist`. It shows that a **TGS** is created (kerberos ticket granting service).
 * **TGS:** provides tickets and Ticket Granting Tickets to the client systems. Ticket Granting Tickets contain the client ID, the client network address, the ticket validity period, and the Ticket Granting Server session key which is used to access service without password exchanging.
 let try adding lines and deleting them by running these commands:
 ```sh
@@ -327,7 +329,8 @@ let try adding lines and deleting them by running these commands:
 ./add_line.py files/file1.txt hallo there     # add two lines "hallo" and "there" to file1.txt.
 ./delete_line.py files/file1.txt 2            # delete the line of index 2 from file1.
 ```
-
+<p> </p>
+<img src="/images/ticket/1.png">
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Acknowledgments
