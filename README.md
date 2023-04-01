@@ -52,7 +52,8 @@ and monitoring users** who want to access _resources and services_ on your netwo
 kerberos introduces the principle of **Single Sign-On (SSO)**. Thus with a single authentication, the user will have access to all the services of the network.
 it relies on a trusted third party to manage authentication, the **KDC (Key Distribution Center)**. All users and services on the network trust this third party.<br>
 Kerberos uses a ticket system to perform authentication and introduces **the principle of SSO (Single Sign On)**. The user authenticates on the KDC and then uses a ticket to authenticate on each requested service. ( no password sending via network).
-
+<p> </p>
+<img src="/images/kerberos.png">
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
